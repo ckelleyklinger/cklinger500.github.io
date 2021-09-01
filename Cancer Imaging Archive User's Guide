@@ -1,0 +1,550 @@
+What's New in the TCIA Data Portal
+August 2021
+The NBIA Data Retriever has been updated to version 4.1.
+A command line interface is now available for Linux (CentOS and Ubuntu) users that does not require the desktop environment. 
+As of version 4.0, the Data Description URI is included in the metadata file you download if you export the cart as a spreadsheet. 
+You can now resume a download if you closed the NBIA Data Retriever in the middle of a download, as long as you choose the same download directory as you originally did before the interruption. You can specify whether you want to download just the missing series or download all of the series in the original manifest file. See Downloading Images Using the NBIA Data Retriever for an updated procedure.
+You must now accept the TCIA Data Usage Policy before proceeding to download data. This policy is now also included in the license file. See Downloading Images Using the NBIA Data Retriever for an updated procedure.
+The NBIA Data Retriever now warns you if there are series in your download that have commercial use restrictions.
+More technical features in this release include replacing Oracle Java 8 with Amazon-Corretto as the embedded Java runtime environment and several bug fixes.
+Introduction to the TCIA Data Portal
+TCIA Data Portal enables you to search for images in the local TCIA in vivo image repository. If available, you can also search remote imaging archives.
+
+TCIA submissions are organized in the following hierarchy, which is important to remember in creating your search query and reviewing search results:
+
+Collection > Patient (Subject) > Study > Series > Images
+
+In other words, a Collection is the largest organizing concept within TCIA and it includes data about Patients (also called Subjects). As you continue to drill down to more granular concepts, Patients contain Studies, Studies contain (Image) Series, and Series contain individual Images.
+
+Return to top of page
+
+Browser Support
+TCIA supports the latest versions of Google Chrome and Mozilla Firefox browsers.
+
+Return to top of page
+
+Searching for Image Studies
+You can search and download public data without logging in to the TCIA Data Portal. To access restricted data, however, you must log in first to see that data in your search results.
+TCIA provides two ways to search for image studies:
+
+Simple Search
+Text Search
+When you first open TCIA Data Portal, the Summary tab displays filters for a simple search and pie charts showing counts of collections, image modalities, and anatomical sites in the database. Each pie "slice" is a filter you can use to narrow the data in the portal. Hover over a pie chart slice to view the name of each filter. The size of each pie slice is relative to the size of that filter's representation in the database. 
+
+TCIA Simple Search page with Simple Search options and Summary tab visible
+
+Click one or more boxes next to each search filter to select it. As you select search filters, they move to the top of the list. They also appear in Boolean query format above the pie charts. This query specifies the filters you have applied to your search. Click Clear if you want to remove all of your filters at once and start over. You can save your query as a URL for later use or to put in an email to a colleague. For more information about sharing, go to Sharing Data in Your Cart.
+
+You can narrow your search by the following filters:
+
+Collections
+Image Modality
+Anatomical Site
+Species
+Phantoms
+3rd-Party Analysis Results
+Clinical Time Points
+Exclude collections with commercial use restrictions
+Date Released
+Subject IDs
+You can also specify the minimum number of image studies you want to match each search filter. For Collections, if you know the name of the collection, click Magnifying glass icon to enter it instead of finding and clicking the collection's box.
+
+3rd-party analysis results are derived data (e.g. segmentations) that were contributed by researchers who were not part of the group that originally submitted a collection to TCIA.
+
+The Simple Search page shows a summary of image studies that match your search criteria. Your selections appear in the following ways:
+
+Boxes you selected are checked.
+Pie charts update to show the exact search results.
+Breadcrumb-style labels at the top of the page show the applied search filters (not all may display due to space constraints).
+Count of search results appears.
+Simple Search tab showing selections and summary of search results
+
+The pie charts show the count of image studies in your search results by Collection, Image Modality, and Anatomical Site. Click a pie slice or hover over it to see the name of the Collection, Image Modality, or Anatomical Site, and number of each, in your search results.
+
+Count by Collections with selected search filter and filter name
+
+The Search Results tab shows the same results as the pie charts but in tabular form.
+
+Search Results in tabular form, showing the first 10 of 20 Subjects and highlighting them as well as the search query (40-Lung plus CT)
+
+Text searches involve entering any text that might appear in any search filter.
+
+Text Search tab with Text Search box within it
+
+Results are displayed in pie charts and a table, just as with the simple search.
+
+Return to top of page
+
+Accessing Limited-Access Collections
+You can search and download public data without logging in to the TCIA Data Portal. To access restricted data, however, you must log in first to see that data in your search results. Consult the TCIA Collections page to learn which collections have limited access.
+
+In the top menu bar, click Login Button.
+The Login window appears.
+Login window
+Enter your user name and password, then click Log In.
+Performing a Simple Search
+A simple search allows you to search for image studies based on a combination of the following search filters: Collections, Image Modality, Anatomical Site, Species, Phantoms, Third-Party Analysis Results, Date released on TCIA, and Subject IDs. The more criteria you select, the fewer results you receive. 
+To perform a simple search
+
+On the TCIA home page, click the Simple Search tab.
+The Simple Search page appears.
+TCIA Simple Search page with Simple Search options and Summary tab visible
+Select filters to narrow down the available image series.
+
+Collections
+
+
+Option 1: Click the box next to each collection name you want to select.
+
+4D-Lung Collection selected
+
+
+
+Hovering over a collection name opens a window with information about the collection in it. Quickly move your mouse to this window, where you can select text and click links. The window stays open until you move your mouse away from it. 
+
+4D-Lung This data collection consists of images acquired during chemoradiotherapy of 20 locally-advanced, non-small cell lung cancer patients. The images include four-dimensional (4D) fan beam (4D-FBCT) and 4D cone beam CT (4D-CBCT). All patients underwent concurrent radiochemotherapy to a total dose of 64.8-70 Gy using daily 1.8 or 2 Gy fractions.  A single Radiation Oncologist delineated targets and organs at risk in all 4D-FBCT and a limited number of 4D-CBCT images. All patients underwent concurrent radiochemotherapy to a total dose of 64.8-70 Gy using daily 1.8 or 2 Gy fractions.  Please see the 4D-Lung wiki page to learn more about the images and to obtain any supporting metadata for this collection.
+
+
+Option 2: Click the magnifying glass to enter a name.
+Collections filter highlighting the search box and magnifying glass
+
+Image Modality 
+
+Click the box next to one or more image modalities.
+
+If you select more than one image modality, clicking ANY returns any study that is associated with any of the modalities you selected. Clicking ALL returns all studies that are associated with all of the modalities you selected.
+
+When you select the ANY search modifier here, only the studies that match your search criteria are returned. Be aware that these may be only be a subset of the studies belonging to a single subject (patient). The potential difference between total studies available and the number of studies returned by your search  becomes clearer when you select the Total Studies and Total Series columns to appear in your search results. To do so, click at the top of the Search Results tab. Select Total Studies and Total Series in the Pick Columns list.
+
+Pick columns list of choices, which includes Cart, Collection ID, Subject ID, Studies, Total Studies, Series, and Total Series.
+
+Checklist of image modalities with CT selected
+
+Anatomical Site
+
+
+ Click the box next to each anatomical site you want to select. Click alpha or num to sort the list alphabetically or numerically. Select Not Specified to find data for which the BodyPartExamined field is empty. 
+
+Checklist of anatomical sites, highlighting Brain
+
+Species
+
+
+Click the box next to the species you want your search results to represent, either human or Mus musculus (mouse).
+
+
+
+Phantoms
+
+Click the box next to the phantom option you want to select.
+
+Phantoms search filter. Options are Only Phantoms, Exclude Phantoms, and Include Phantoms.
+
+3rd-Party Analysis Results
+
+
+Third-party analysis results are derived data (e.g. segmentations) that were contributed by researchers who were not part of the group that originally submitted a collection to TCIA. To enhance the value of TCIA collections, TCIA encourages the research community to publish their analyses of existing TCIA image collections. Examples of this kind of data includes radiologist or pathologist annotations, image classifications, segmentations, radiomics features, or derived/reprocessed images.
+
+Click the box next to each third-party analysis results option you want to select. Only DICOM data from third-party analysis results appear when using this search filter. A full listing of all third-party analysis data inclusive of non-DICOM formats appears in the Analysis Results Directory. 
+
+
+
+Clinical Time Points
+
+
+Some datasets encode Clinical Time Point information in the image metadata. This filter allows you to refine search results based on how many days have passed since a particular clinical event occurred when these metadata are included by the data submitter (e.g. "Days since diagnosis"). Click select to view the types that are available in the database, plus their available date range. In the from and to boxes, enter numbers that correspond to the range of days from and to that time point.
+
+
+
+Exclude collections with commercial use restrictions
+
+
+TCIA supports collections with different types of licenses. Some licenses prohibit the commercial use of the collection. You can filter your search results to exclude those collections that have commercial use restrictions.
+
+
+
+At least X time point (DICOM studies)	
+Enter the minimum number of time points that match the criteria of your search. This filter allows you to see subjects that have more than one DICOM study (that is, the patient was seen at multiple time points).
+
+At least X (number) time point (DICOM studies) field
+
+Date Released
+
+
+
+Enter a From and To date to narrow your search results to studies that TCIA first made available during that date range.
+
+Alternately, select the Apply "Available" date range box to exclude studies that were unavailable to TCIA during the selected date range. Click the Arrow turning in a counter-clockwise direction button to return the dates to the default date range.
+
+Date Released search filter
+
+Subject IDs	
+Enter Subject IDs associated with the image series you want to receive in your search results. Separate each Subject ID with a comma and then click Apply Subject IDs.
+
+Subject IDs text box
+
+Select which columns you want to have appear in the detailed search results on the Search Results tab by clicking at the top of the Search Results tab. The Pick Columns panel appears. 
+
+Pick columns list of choices, which includes Cart, Collection ID, Subject ID, Studies, Total Studies, Series, and Total Series.
+
+
+Search results are shown in two different ways, as a summary and as detailed search results, and which one appears first matches your last choice. The Summary tab shows updated pie charts and the number of image series in the search results.
+Summary tab showing pie charts
+Click the Search Results tab for more detailed results.
+
+
+Return to top of page
+
+Performing a Text Search
+A text search allows you to query many of the database fields, DICOM image tag data and their values, and annotation files that are not available in the Simple search. You can also use the text search to query for content of DICOM Structured Reports (DICOM SR) and strains from mouse and rat collections. Refer to the DICOM Data Dictionary for tags or field names you can use in a text search and Structure of DICOM SR Documents for a description of the fields in a DICOM SR.
+DICOM Examples
+
+Enter pancreas in the Text Search box and find all subjects associated with the value pancreas.
+Query using the attribute:searchTerm technique: for example, Body Part Examined:pancreas. In this example, the colon interprets the DICOM field from the value.
+Query by DICOM codes, such as 0018,0015:pancreas. 0018,0015 is the DICOM code for Body Part Examined.
+Query by DICOM SR attributes, such as 0008,0104 for Code Meaning. Entering 0008,0104:tonsil, returns all subjects with a Code Meaning that includes the word "tonsil," and 0008,0104:tonsil adenoid returns all subjects with a Code Meaning that includes both "tonsil" and "adenoid." 
+Use a wildcard search such as Body Part Examined:panc* to find all subjects associated with values beginning with panc, including pancreas, pancreatic duct, and pancreatic duct and bile duct systems.
+Examples for Strains
+
+Query for the strain name or parts of the strain name or use a value name pair to construct the query. You can query by the Mouse Genome Informatics (MGI) number or query for MGI in the coding scheme designator field. Examples follow.
+Strain Description (0010,0212) = "NOD.Cg-Prkdc<scid> Il2rg<tm1Wjl>/SzJ"
+Strain Nomenclature (0010,0213) = "MGI_2013"
+Strain Code Sequence (0010,0219):
+ Code Value (0008,0100) = "3577020"
+ Coding Scheme Designator (0008,0102) = "MGI"
+ Code Meaning I0008,0103) = "NOD.Cg-Prkdc<scid> Il2rg<tm1Wjl>/SzJ"
+The text search does have some restrictions. These are:
+
+The text string you use must have more than one character. The search won't return any values if the text string has only one character.
+Do not use a forward slash (/) in your text string.
+Do not use complex searches with AND or OR statements (text search supports Lucene syntax but only a single field can be searched at a time).
+To perform a text search
+
+On the TCIA home page, click Text Search or Search Images > Text Search.
+The Text Search page appears.
+
+Text Search tab with an empty text box, Clear button, and Search button
+
+In the Text Search box, enter a text string of two characters or more.
+Click Search button.
+The search results appear.
+TCIA text search results on the term glioma
+
+
+Navigation Tips
+
+Click the down arrow next to the Subject ID column header to sort the results alphabetically (A to Z or Z to A) by Subject ID.
+Click the arrows at the bottom of the table to display the first, previous, next, or last page of results.
+Click the page number links to move to a specific page of results.
+In the Show (10) entries box in the bottom left, edit the default 10 to the number of entries you want to see on a search results page.
+The following table describes each item in the search results table.
+
+Caret symbol and cart symbol
+
+Click the caret to view the subject details. Click the cart symbol to add image series to your cart.
+Collection ID	Collection identifier
+Subject ID	
+Click the Subject ID to view all study images for this subject in a DICOM web viewer, a single series' thumbnails, or the DICOM header for the first image in the series. See Search Results (Studies for Subject).
+
+Hit	
+The field in the study where the text string you entered as your search criteria appears.
+
+Viewing Subject Details
+The search results from your query are presented both on the Summary tab in pie charts and on the Search Results tab in a table. Each record in the table corresponds to one subject (patient) and displays the collection(s), study(ies), and image series associated with that subject.
+From the Search Results tab, you can view subject details, view all image series associated with the subject, and add image series to your cart for download. You can also view the DICOM header for a selected image series. In the future, you will be able to view the image.
+
+To view subject details
+
+Search for studies that match criteria that interest you.
+The Summary tab refreshes to show your search results in pie chart form.
+Click the Search Results tab.
+The search results that match your criteria appear sorted by Subject ID.
+
+You can add all studies associated with a subject to your cart at the same time or drill down to an individual study and add it to your cart instead.
+
+Click a Subject ID link.
+All studies associated with this subject appear. In this example, this subject is only associated with one study, and only one image series is associated with that study.
+
+The red asterisk indicates that the date, which is the date that this series was first available at TCIA, has been offset to protect private health information.
+
+Click the date or the arrow to the left of the study cart icon to view details about the selected study.
+All of the image series associated with that study appear.
+
+You can now:
+View the series description, modality, manufacturer, number of images, and series ID.
+View thumbnails of the image series.
+View DICOM data for this image series.
+View an animation of the image series.
+Download study data.
+Return to top of page
+
+Viewing Thumbnails of the Image Series
+You can view thumbnails of all images in the selected series and then open selected images for further analysis in another image system.
+To view thumbnails
+
+View the details for a subject.
+Select a study and view its details.
+In the row for an image series, click Magnifying glass.
+Image series for a selected subject
+Thumbnails of all of the images in the selected image series appear.
+
+Thumbnails of all images in a selected image series
+Click any image to download it to your computer. 
+Follow your browser's instructions to open or save the file.
+File downloaded to Chrome, Show All button
+Return to top of page
+
+Viewing DICOM Data
+Digital Imaging and Communications in Medicine (DICOM) is a standard for handling, storing, printing, and transmitting information in medical imaging.
+
+You can view the DICOM tags that form the header of the selected image series.
+
+To view DICOM data
+
+View the details for a subject.
+Select a study and view its details.
+In the row for an image series, click DICOM button.
+The DICOM tags associated with the image series appear.
+DICOM Tags for Image
+Return to top of page
+
+Viewing TCIA Collections
+You can visualize TCIA collections before you download them by launching an image animation when there are more than two images in the series. 
+To view a TCIA collection
+
+View the details for a subject.
+Click the study date link for the collection you want to view.
+The image series associated with this study appear.
+Series detail for one study, showing the thumbnails, image animation, and DICOM buttons.
+In the row for an image series, clickOHIF Viewer tool button.
+The images in the series open in the Open Health Imaging Foundation (OHIF) Viewer.
+OHIF Viewer TCIA Alpha showing a toolbar, an overview image, and a large, main image window.
+Click Play button from the OHIF Viewerto display the images in the series sequentially.
+Return to top of page
+
+Downloading Study Data
+You can download items you add during the current work session. Before you download items you must download and then install the NBIA Data Retriever.
+
+You select items to download by first searching for them in TCIA and then adding them to your cart.
+
+You can also export data in your cart to a spreadsheet.
+
+Adding Data to the Cart
+Your cart is a holding place for data you have selected to download. You can add all image series associated with a subject, all image series associated with a study, or one or more selected image series to your cart. 
+To add all subjects to the cart
+
+Search for the subject.
+Click the Search Results tab.
+Click the subject cart icon in the row of one or more subjects. This selects all studies associated with each subject.
+The cart icon turns green and the number of image series now in your cart appears next to the cart. The cart itself, in the upper-right of the window, shows how large the download will be.
+
+To remove all of the data associated with this subject from the cart, click the cart icon again.
+
+
+Search results tab showing all image series associated with the subject selected. One subject is selected and so has a green icon.
+
+To add selected studies to the cart
+
+Search for the subject.
+Click the Search Results tab.
+Click a Subject ID link or click the arrow to the left of the subject cart to open all series associated with that subject.
+Click the cart icon for one or more series.
+The study cart icons you select turn green.
+The subject cart icon for the subject turns yellow, indicating that you have not selected all available studies for this subject.
+
+Search results screen showing what has been put into the cart. Two studies from one subject have been selected. Partial selections are yellow and full selections are green.
+To add selected series to the cart
+
+Search for the subject.
+Click the Search Results tab.
+Click a Subject ID link or click the arrow to the left of the subject cart to open all series associated with that subject.
+Click a study date link or click the arrow to the left of the study cart to open all the series associated with that study.
+Click the cart icon for one or more series.
+The series cart icons you select turn green.
+The study cart icon for the subject turns yellow, indicating that you have not selected all available series for this study.
+The subject cart icon for the subject turns yellow, indicating that you have not selected all available studies and series for this subject.
+
+Search results screen showing what has been put into the cart. Two series from one study have been selected. Partial selections are yellow and full selections are green.
+Return to top of page
+
+Downloading the NBIA Data Retriever
+After you search for images of interest and add them to your data basket, you can download them.
+The most convenient method of downloading is by using the NBIA Data Retriever. You must install the NBIA Data Retriever before you begin downloading. You only have to install it once to use it in future downloading sessions.
+
+Consult the NBIA Data Retriever FAQ for more information about NBIA Data Retriever versions and usage.
+
+Get the NBIA Data Retriever
+Click one of the following links to download the NBIA Data Retriever for that operating system. See Downloading Study Data for information on using this application to download data. 
+RPM (tested on centOS)
+To run this file, type the following at the command prompt:
+sudo yum -v -y remove NBIADataRetriever-4.0-1.x86_64.rpm;sudo yum -y install NBIADataRetriever-4.1-1.x86_64.rpm
+DEB (tested on Ubuntu)
+To run this file, type the following at the command prompt:
+sudo -S dpkg -r nbia-data-retriever-4.0.1.deb;sudo -S dpkg -i nbia-data-retriever-4.1.deb
+NBIA Data Retriever in the Mac App Store
+Windows
+The following new and updated features are available in NBIA Data Retriever 4.1, which was released in August 2021.
+
+You can now resume a download if you closed the NBIA Data Retriever in the middle of a download, as long as you choose the same download directory as you originally did before the interruption. You can specify whether you want to download just the missing series or download all of the series in the original manifest file. See Downloading Images Using the NBIA Data Retriever for an updated procedure.
+A command line interface is now available for Linux (CentOS and Ubuntu) users that does not require the desktop environment. 
+You must now accept the TCIA Data Usage Policy before proceeding to download data. This policy is now also included in the license file. See Downloading Images Using the NBIA Data Retriever for an updated procedure.
+The NBIA Data Retriever now warns you if there are series in your download that have commercial use restrictions.
+More technical features in this release include replacing Oracle Java 8 with Amazon-Corretto as the embedded Java runtime environment and several bug fixes.
+Installing the NBIA Data Retriever
+You can install the NBIA Data Retriever on Windows, Mac, or Linux.
+To install the NBIA Data Retriever on Windows
+
+Download the installer package for Windows using the Windows link above.
+Save the installer package file to your computer.
+Install the app by double-clicking the installer package file.
+Agree to the terms in the License Agreement and click Install.
+When the Setup Wizard ends, click Finish.
+To install the NBIA Data Retriever on Mac
+
+The Mac version of the NBIA Data Retriever is only available through the iOS App Store. It requires a manifest file to work. You can download the app first or create a manifest file first. If you download the app first, right-click the manifest file and select Open With Downloader App. If you create a manifest file first, right-click it and select Open With App Store. This installs the app and then opens the manifest file in the app.
+
+On your Mac, find the NBIA Data Retriever on the Mac App Store.
+
+The NBIA Data Retriever is free but still requires you to log in to download it. Consider changing your iOS Password Settings so that you can download free software without having to log in separately for it.
+
+Click Get, then click Install App. The NBIA Data Retriever is free.
+The app starts downloading to your Mac. When the download is complete, you can open a manifest file with the NBIA Data Retriever.
+To install the NBIA Data Retriever on Linux (centOS or Ubuntu)
+
+You must have the sudo privilege on your computer and a sudo password to install the NBIA Data Retriever on CentOS and Ubuntu.
+
+Download the installer package for centOS or Ubuntu using the links above.
+Save the installer package file to your computer.
+Open a command window and go to the location where you saved the installer.
+Downloading Images Using the NBIA Data Retriever
+When you download images you have added to your cart, TCIA provides a list of these images in a manifest file (manifest-xxx.tcia). You must have already installed the NBIA Data Retriever to open this manifest file and download the images.
+You can share the manifest file with collaborators, so that they can download the same images that you have added to your cart. Collaborators must also install the  NBIA Data Retriever to open the manifest file.
+
+If you want to share a manifest file that includes links to private image collections, you must first manually install the latest NBIA Data Retriever. The latest version of the NBIA Data Retriever controls access to private collections. In addition, your collaborators must have the same access to those private collections as you do. Otherwise, your collaborators will not be able to download images from those collections.
+
+To download images using the NBIA Data Retriever
+
+Search for images of interest.
+Add those images to your cart.
+Click the cart icon in the top-right of the page Cart icon.
+The cart contents appear.
+Cart contents showing three image series ready to be downloaded
+Click Download button.
+A message appears reminding you to download the NBIA Data Retriever. If you have already downloaded it, click Do not show this message again and click Download button. Otherwise, click Get Data Retriever button to go to a page with links for downloads for each operating system.
+Message box prompting you to download the Data Retriever
+Open the manifest-xxx.tcia file.
+The Data Usage Policy notification appears. 
+
+
+Click Agree. You must agree to the data usage policy before you can proceed with downloading the data in your cart. Note that this policy is included in the license file accompanying your download.
+
+If you have added limited-access series to your cart, the NBIA Data Retriever login window appears. Enter your user name and password and click Submit.
+
+
+If all of the series you have added to your cart are public, the NBIA Data Retriever appears, showing the items you added to your cart in the Downloads table.
+NBIA Data Retriever with two collections listed in the Downloads table.
+
+If there are series in your download that have commercial use restrictions, the NBIA Data Retriever displays a message referring you to the license information for these series.
+
+You can hover your mouse over the Patient ID, Study Instance, and Series Instance columns to reveal the complete corresponding IDs. You can also resize a column by selecting and dragging the column border.
+
+If you do not want to download any of those items, select them in the Downloads table and then click Delete. When you remove an item from the Downloads table, it stays in your cart in the Radiology Portal. 
+
+
+If you close the NBIA Data Retriever in the middle of a download, NBIA Data Retriever remembers the partial download. When you restart the NBIA Data Retriever, choosing the same download directory as before, and click Start, you are prompted to specify whether you want to download just the missing series or download all of the series in the original manifest file. 
+
+
+
+If you choose Download all, the existing download folder will be overwritten with all of the series in the original manifest file. If you choose Download missing series, only those series you have not previously downloaded appear in the Downloads table in the NBIA Data Retriever window, then download only those series.
+
+
+NBIA Data Retriever File Naming System
+
+The file naming system used by the NBIA Data Retriever provides a natural ordering of the files within each series. The DICOM files are first ordered by ordinal position of acquisition number and then by ordinal position of instance number. The files are then assigned numbers with the lowest acquisition being 1 and the lowest instance number within that acquisition being 1, separated by a dash. The numbers are incremented by 1 as the next values are encountered. All values are left-padded with zeros to provide for the ordering within the file system. 
+
+As an example, a series with 2 acquisition numbers with each acquisition having 42 instance numbers would start with 1-01.dcm for the lowest acquisition number and the lowest instance number in that acquisition. The last file in that acquisition would be 1-42.dcm.  Then the second acquisition would start with 2-01.dcm, ending with 2-42.dcm, in that acquisition. For the purposes of ordering, an empty value in either acquisition number or instance number is lower than an file having a value for those number.
+
+Click Browse to navigate to the destination where you want the images/annotations to be downloaded.
+
+Click Start to begin the download. You can monitor the status of the full download in the progress bar on top, and for each collection in the Progress column. The Status column indicates when the download for each item is complete.
+At any point in the process, you can click the Pause and Resume buttons to temporarily stop and restart the process.
+
+The downloaded files are stored in a child folder under the destination folder such as Collection Name > Patient ID > part of Study Date + part of Study ID + part of Study Description + last 5 digits of Study Instance UID > part of Series Number + part of Series Description + last 5 digits of Series Instance UID.
+
+Network Error?
+
+If network errors occur during large downloads, the NBIA Data Retriever retries downloading the series in the manifest file the number of times that your administrator has configured. The default is four times.
+
+After the automatic retries, you have the option of retrying just the failed series, saving an error report, which you can share with the TCIA help desk, and exiting.
+
+
+
+Exporting the Cart to a Spreadsheet
+Once data is in your cart, you can export it to a Comma-Delimited Values (CSV)-format spreadsheet for analysis or sharing with others.
+To export your cart
+
+Add data to your cart.
+Click Cart button with 25GB label.
+The cart appears.
+TCIA cart page showing 1-10 of 740 series in the cart.
+Click Export Spreadsheet button.
+A CSV file called "metadata" opens in your browser. This file provides an overview of the downloaded files. 
+Manifest folder tree, which includes two folders called 4D-Lung and LCTSC and an Excel file called metadata.
+Metadata file in the manifest folder
+
+This file includes the following columns: 
+Series Instance UID
+Collection
+3rd Party Analysis
+Data Description URI
+Subject ID
+Study UID
+Study Description
+Study Date
+Series Description
+Modality
+Manufacturer
+SOP Class Name
+SOP Class UID
+Number of Images
+File size
+File Location
+Download Time Stamp
+
+Metadata file for selected images in the 4D-Lung collection
+Metadata file opened in Microsoft Excel
+Sharing a Query
+You can save your query for later use or share it with a colleague by email.
+
+To share a query
+
+In the top menu bar, click Share button and then select Share my query.
+The Query URL box appears.
+
+Query URL message box that provides the URL you can share with others that contains your query
+Click Copy URL.
+The URL copies into your Clipboard.
+Paste the URL into an email or other document.
+
+Shared queries honor data permissions that may exist. Each person that runs the shared query will only see search results that he or she is allowed to see.
+
+Return to top of page
+
+Sharing Data in Your Cart
+Once you have added data to your cart, you can share it as a URL to a static set of data. When you or a colleague opens the URL in a browser window, the new TCIA Graphical User Interface (GUI) opens to the cart page. 
+
+In the legacy TCIA data portal, this was called a shared list. This is a similar concept in the new TCIA GUI. 
+
+To share data in your cart
+
+Add data to your cart.
+In the top menu bar, click Share button and then select Share My Cart.
+The Retrieve Cart Data URL box appears.
+
+Cart Data URL message box showing the URL where you can access or share your cart data
+Click Copy URL.
+The URL copies into your Clipboard.
+Paste the URL into an email or other document.
+The shared cart honors data permissions that may exist. Each person that opens the shared cart will only see data that that person is allowed to see.
+
+Return to top of page
